@@ -1,0 +1,67 @@
+class main():
+    name = "A"
+
+    def sit(self):
+        if self.name == "A":
+            self.name = "B"
+            return 0
+        elif self.name == "B":
+            self.name = "G"
+            return 2
+        elif self.name == "D":
+            self.name = "E"
+            return 4
+        elif self.name == "G":
+            self.name = "C"
+            return 10
+        elif self.name == "E":
+            self.name = "F"
+            return 6
+        elif self.name == "H":
+            self.name = "A"
+            return 11
+        elif self.name == "F":
+            self.name = "G"
+            return 7
+        else:
+            raise KeyError
+
+    def post(self):
+        if self.name == "B":
+            self.name = "C"
+            return 1
+        elif self.name == "C":
+            self.name = "D"
+            return 3
+        elif self.name == "D":
+            self.name = "A"
+            return 5
+        elif self.name == "F":
+            self.name = "H"
+            return 8
+        elif self.name == "G":
+            self.name = "H"
+            return 9
+        else:
+            raise KeyError
+
+o = main()
+print(o.post()) # KeyError
+print(o.sit()) # 0
+print(o.sit()) # 2
+print(o.sit()) # 10
+print(o.post()) # 3
+print(o.sit()) # 4
+print(o.post()) # KeyError
+print(o.sit()) # 6
+print(o.sit()) # 7
+print(o.post()) # 9
+print(o.sit()) # 11
+print(o.sit()) # 0
+print(o.post()) # 1
+print(o.sit()) # KeyError
+print(o.post()) # 3
+print(o.post()) # 5
+print(o.sit()) # 0
+print(o.sit()) # 2
+print(o.post()) # 9
