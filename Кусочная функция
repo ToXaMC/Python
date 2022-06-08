@@ -1,0 +1,15 @@
+import math
+
+
+def main(x):
+    if x < -31:
+        return 51*math.atan(x)**4-x**7
+    elif -31 <= x < 66:
+        return 63*(97*x+72+97*(x**2))**3+x**6
+    elif 66 <= x < 149:
+        return (x-x**2-10)**3
+    else:
+        return math.cos(20+38*(x**3))**7
+
+
+print(main(164))
