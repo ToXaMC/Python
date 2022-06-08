@@ -1,0 +1,30 @@
+def main(string):
+    i = 0
+    key = ""
+    word = ""
+    dictionary = {}
+    while i < len(string):
+        # if string[i] == "{" or string[i] == 'n':
+        if i + 5 < len(string):
+            if string[i: i+5] == "local":
+                i += 5
+                while string[i] != ' ' and string[i] != "=":
+                    key += string[i]
+                    i += 1
+                # print(key, end=" ")
+                while True:
+                    if string[i: i+3] == "==>":
+                        i += 3
+                        break
+                    i += 1
+                while string[i] != ';':
+                    word += string[i]
+                    i += 1
+                # print(word)
+                dictionary[key] = word
+                key = ""
+                word = ""
+        i += 1
+    return dictionary
+
+main("do local leis ==>lere_846; end; do local edbi_986==>dierqu_991; end; do local aterece_266==> aned_87; end;")
