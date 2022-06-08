@@ -1,0 +1,36 @@
+map = {'i': 1, 1975: {'i': 0, 'APEX': {
+    'i': 4,
+    'VHDL': {
+        'i': 3,
+        2005: 0,
+        1968: 1,
+        1979: 2,
+        },
+    'PUG': 3,
+    'VCL': {
+        'i': 3,
+        2005: 4,
+        1968: 5,
+        1979: 6,
+        },
+    }, 'SVG': {
+    'i': 4,
+    'VHDL': 7,
+    'PUG': 8,
+    'VCL': {
+        'i': 2,
+        'STON': 9,
+        'GOSU': 10,
+        'KICAD': 11,
+        },
+    }}, 1967: 12}
+
+
+def main(arr):
+    current = map[arr[1]]
+    while type(current) != int:
+        current = current[arr[current['i']]]
+    return current
+
+
+main(["APEX", 1975, "STON", 1968, "VCL"])
